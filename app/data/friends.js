@@ -17,6 +17,22 @@ var friendObject = [
             4,
             1
         ]
+    },
+    {
+        name: "Valerie",
+        photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        scores: [
+            3,
+            3,
+            2,
+            4,
+            1,
+            5,
+            2,
+            4,
+            4,
+            1
+        ]
     }
 
 ];

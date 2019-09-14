@@ -1,4 +1,4 @@
-var friendsData = require("../data/friends");
+var friendsData = require("../data/friends.js");
 
 
 module.exports = function (app) {
@@ -13,17 +13,38 @@ module.exports = function (app) {
   });
 
   app.post("/api/friends", function (req, res) {
+    var userData = req.body;
+    // var totalDif = 0;
 
-    console.log(req.body)
+    // console.log(userData)
+    for (var i = 0; i < userData.scores.length; i++) {
+      // console.log(parseInt(userData.scores[i]))
+    }
 
-    res.send("Best Match")
+    for(var i =0; i<friendsData.length; i++){
+      var totalDif = 0;
+     
+      
+    // console.log(friendsData[i]);
+
+      for(var s = 0;s<friendsData.scores;s++){
+
+        totalDif += Math.abs(friendsData.scores[s] - parseInt(userData.scores[s]));
+        // console.log(parseInt(userData.scores[s]));
+      }
+      var lookAt = friendsData.name[i] + totalDif;
+      console.log(lookAt)
+    }
+    // console.log(totalDif);
+    // res.send("Best match!!!!!");
+    // friendsData.push(userData);
   })
 
 
 
- 
 
-  
+
+
 
 
 };
