@@ -1,4 +1,5 @@
-var friendsData = require("../data/friends.js");
+var friendsData = require("../data/friends.json");
+var fs = require("fs");
 
 
 module.exports = function (app) {
@@ -14,30 +15,39 @@ module.exports = function (app) {
 
   app.post("/api/friends", function (req, res) {
     var userData = req.body;
-    // var totalDif = 0;
 
-    // console.log(userData)
-    for (var i = 0; i < userData.scores.length; i++) {
-      // console.log(parseInt(userData.scores[i]))
-    }
+    var closestFriend;
+    var lowestTotalDif;
 
-    for(var i =0; i<friendsData.length; i++){
+    for (var i = 0; i < friendsData.length; i++) {
+      var friend = friendsData[i];
       var totalDif = 0;
-     
-      
-    // console.log(friendsData[i]);
 
-      for(var s = 0;s<friendsData.scores;s++){
+      for (var s = 0; s < friend.scores.length; s++) {
 
-        totalDif += Math.abs(friendsData.scores[s] - parseInt(userData.scores[s]));
+        totalDif += Math.abs(friend.scores[s] - parseInt(userData.scores[s]));
         // console.log(parseInt(userData.scores[s]));
       }
-      var lookAt = friendsData.name[i] + totalDif;
-      console.log(lookAt)
+
+      if ((i === 0) || (totalDif < lowestTotalDif)) {
+        closestFriend = friend;
+        lowestTotalDif = totalDif;
+      }
+
     }
-    // console.log(totalDif);
-    // res.send("Best match!!!!!");
-    // friendsData.push(userData);
+
+    console.log(closestFriend);
+    console.log(lowestTotalDif);
+
+    friendsData.push(userData);
+    fs.writeFile("app/data/friends.json", JSON.stringify(friendsData), function (err) {
+      if (err) {
+        return console.log(err);
+      }
+
+      console.log("The file was saved!");
+    });
+    res.json(closestFriend);
   })
 
 

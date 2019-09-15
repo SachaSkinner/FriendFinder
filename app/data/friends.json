@@ -1,18 +1,1 @@
-[
-    {
-        "name": "Ahmed",
-        "photo": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-        "scores": [
-            5,
-            1,
-            4,
-            4,
-            5,
-            1,
-            2,
-            5,
-            4,
-            1
-        ]
-    }
-]
+[{"name":"Ahmed","photo":"https://avatars0.githubusercontent.com/u/4921183?s=460&v=4","scores":[5,1,4,4,5,1,2,5,4,1]},{"name":"Tina","photo":"https://www.irishtimes.com/polopoly_fs/1.3654392.1538846772!/image/image.jpg_gen/derivatives/box_620_330/image.jpg","scores":["1","1","1","1","1","1","1","1","1","1"]},{"name":"Alex","photo":"https://upload.wikimedia.org/wikipedia/commons/f/f4/Tina_Nordstrom_matambassador_ny_nordisk_mat.jpg","scores":["3","2","4","5","1","2","3","4","2","1"]},{"name":"Kyle","photo":"https://i.kym-cdn.com/entries/icons/original/000/029/943/Screen_Shot_2019-06-04_at_2.41.24_PM.jpg","scores":["1","1","1","1","1","1","1","1","1","1"]},{"name":"sasha","photo":"https://myaccount.google.com/?utm_source=OGB&tab=wk&authuser=0","scores":["2","3","4","4","3","3","3","4","3","2"]}]
